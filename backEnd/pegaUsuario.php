@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ERROR | E_PARSE);
 function pesquisar($id){
     include 'conection.php';
     if(!$id) return '';

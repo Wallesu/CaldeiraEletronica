@@ -36,85 +36,64 @@ include '../backEnd/pegaUsuario.php';
     </header>
  
     <main class="fundo">
-        <form action="../backend/atualizaUsuario.php" method="post">
-            <div class="container rounded bg-white mt-5 mb-5">
-                <div class="row">
-                        <div class="col-md-3 border-right">
-                            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                                <img 
-                                    class="rounded-circle mt-5"
-                                    width="150px"
-                                    src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
-                                >
-                                <span class="font-weight-bold"><?php echo $usuario['nome']?></span>
-                                <span class="text-black-50"><?php echo $usuario['email']?></span>
+        <div class="container rounded bg-white mt-5 mb-5">
+            <div class="row">
+                    <div class="col-md-3 border-right">
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                            <img 
+                                class="rounded-circle mt-5"
+                                width="150px"
+                                src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                            >
+                            <span class="font-weight-bold"><?php echo $usuario['nome']?></span>
+                            <span class="text-black-50"><?php echo $usuario['email']?></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 border-right">
+                        <div class="row">
+                            <div class="d-flex justify-content-between align-items-center mb-3 col-12">
+                                <h4 class="text-right">Seu contato</h4>
                             </div>
-                        </div>
-                        <div class="col-md-6 border-right">
-                            <div class="row">
-                                <div class="d-flex justify-content-between align-items-center mb-3 col-12">
-                                    <h4 class="text-right">Seu contato</h4>
+                            <div class="col-6">
+                                <div class="col-md-12">
+                                    <label class="labels">Nome:</label>
+                                    <input type="text" class="form-control" placeholder="Novo nome" name="nome" value="<?php echo $usuario['nome']?>">
                                 </div>
-                                <div class="col-6">
-                                    <div class="col-md-12">
-                                        <label class="labels">Nome:</label>
-                                        <input type="text" class="form-control" placeholder="Novo nome" name="nome" value="<?php echo $usuario['nome']?>">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="labels">E-mail</label>
-                                        <input type="email" class="form-control" placeholder="Seu email" name="email" value="<?php echo $usuario['email']?>">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="labels">Telefone</label>
-                                        <input type="text" class="form-control" placeholder="Seu contato" name="telefone"  value="<?php echo $usuario['telefone']?>">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="labels">CPF</label>
-                                        <input type="text" class="form-control" placeholder="Cpf" name="cpf" value="<?php echo $usuario['cpf']?>">
-                                    </div>
+                                <div class="col-md-12">
+                                    <label class="labels">E-mail</label>
+                                    <input type="email" class="form-control" placeholder="Seu email" name="email" value="<?php echo $usuario['email']?>">
                                 </div>
-                                <div class="col-6">
-                                    <div class="col-md-12">
-                                        <label class="labels">CEP</label>
-                                        <input type="text" class="form-control" placeholder="CEP da rua" name="cep" value="<?php echo $usuario['cep']?>">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="labels">Cidade</label>
-                                        <input type="text" class="form-control" placeholder="Nome da sua cidade" name="cidade" value="<?php echo $usuario['cidade']?>">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="labels">Rua</label>
-                                        <input type="text" class="form-control" placeholder="Nome da sua rua" name="rua" value="<?php echo $usuario['rua']?>">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="labels">Número da casa</label>
-                                        <input type="text" class="form-control" placeholder="numero da sua casa" name="numero" value="<?php echo $usuario['numero']?>">
-                                    </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Telefone</label>
+                                    <input type="text" class="form-control" placeholder="Seu contato" name="telefone"  value="<?php echo $usuario['telefone']?>">
                                 </div>
-                                <div>
-                                    <button type="button" class="col-md-7 col-lg-10 btn btn-outline-success btn-lg my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        atualizar contato
-                                    </button>
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Confirmar alterações</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                                                <button type="submit" class="btn btn-success">Confirmar</button>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-12">
+                                    <label class="labels">CPF</label>
+                                    <input type="text" class="form-control" placeholder="Cpf" name="cpf" value="<?php echo $usuario['cpf']?>">
                                 </div>
-                            </div>    
-                        </div>
-                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-md-12">
+                                    <label class="labels">CEP</label>
+                                    <input type="text" class="form-control" placeholder="CEP da rua" name="cep" value="<?php echo $usuario['cep']?>">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Cidade</label>
+                                    <input type="text" class="form-control" placeholder="Nome da sua cidade" name="cidade" value="<?php echo $usuario['cidade']?>">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Rua</label>
+                                    <input type="text" class="form-control" placeholder="Nome da sua rua" name="rua" value="<?php echo $usuario['rua']?>">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Número da casa</label>
+                                    <input type="text" class="form-control" placeholder="numero da sua casa" name="numero" value="<?php echo $usuario['numero']?>">
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
             </div>
-        </form>
+        </div>
     </main>
 
     

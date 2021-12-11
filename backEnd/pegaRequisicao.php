@@ -30,14 +30,24 @@ if(mysqli_num_rows($resultado) > 0){
     foreach($array as $req){
         $dado =  $dado . "
         <tr>
-            <td> <button class='botaoDetalhes' value='".$req['idR']."'>teste</button></td>
+            <td>
+                <i
+                    class='fas fa-briefcase fa-2x text-success botaoDetalhes'
+                    value='".$req['idR']."'
+                ></i>
+            </td>
             <td>". $req['descricao_cliente'] ."</td>
             <td>". $req['nome_produto'] ."</td>
             <td>". $req['marca_produto'] ."</td>
             <td>". $req['data'] ."</td>
             <td>". $req['status'] ."</td>
             <td>
-                <i class='fas fa-briefcase fa-2x text-success botaoDetalhes' value='".$req['idR']."'  data-bs-toggle='modal' data-bs-target='#modalInfo".$req['idR']."'></i>
+                <i
+                    class='fas fa-info-circle fa-2x text-warning botaoDetalhes'
+                    value='".$req['idR']."'
+                    data-bs-toggle='modal'
+                    data-bs-target='#modalInfo".$req['idR']."'
+                ></i>
             </td>
         </tr>";
 
