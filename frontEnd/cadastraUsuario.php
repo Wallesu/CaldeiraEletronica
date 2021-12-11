@@ -1,6 +1,15 @@
 <?php
-    session_start();
-    include('../backEnd/function.php')
+    error_reporting(E_ERROR | E_PARSE);
+    include('../backEnd/pegaUsuario.php');
+    $usuario = pesquisar($_SESSION['idlogado']);
+
+    $nomeUsuario = '';
+    $emailUsuario = '';
+    if($usuario){
+        $nomeUsuario = $usuario['nome'];
+        $emailUsuario = $usuario['email'];
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -25,11 +34,11 @@
                     <div class="row g-3 tabcontent mt-1" id="pagina1">
                         <div class="col-12">
                             <label for="nome" class="form-label">Seu nome completo</label>
-                            <input type="text" class="form-control campoForm" id="nome" name="nome" value="<?php echo $_SESSION['nomeUsuario'];?>">
+                            <input type="text" class="form-control campoForm" id="nome" name="nome" value="<?php echo $nomeUsuario ?>">
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control campoForm" id="email" name="email" value="<?php echo $_SESSION['emailUsuario'];?>">
+                            <input type="email" class="form-control campoForm" id="email" name="email" value="<?php echo $emailUsuario ?>">
                         </div>
                         <div class="col-md-4">
                             <label for="telefone" class="form-label">Telefone</label>
