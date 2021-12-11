@@ -1,0 +1,15 @@
+.reqContainer{
+    width: 50rem;
+    margin: auto;
+}
+
+table.dataTable tr{
+    padding: 10rem;
+}
+.barraPesquisa{
+    background: blue;
+}
+.botaoDetalhes:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
