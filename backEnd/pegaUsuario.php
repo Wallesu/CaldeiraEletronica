@@ -1,9 +1,8 @@
 <?php
 session_start();
-error_reporting(E_ERROR | E_PARSE);
+$usuario = pesquisar($_SESSION['idlogado']);
 function pesquisar($id){
     include 'conection.php';
-    if(!$id) return '';
     $query = "SELECT * FROM usuarios WHERE id = ".$id;
 
     $resultado = mysqli_query($conn, $query);
