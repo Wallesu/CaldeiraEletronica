@@ -24,4 +24,5 @@ function atualizaUsuario($nome, $cpf, $telefone, $cep, $cidade, $rua, $numero){
     }
     echo('Ocorreu um erro!');
 }
+
 ?>

@@ -1,5 +1,6 @@
 <?php 
 include '../backEnd/pegaRequisicao.php';
+$estrutura = tabelaRequisicoes();
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ include '../backEnd/pegaRequisicao.php';
 
 ?>
 <!-- Modal -->
-    <?php echo $modal ?>
+    <?php echo $estrutura[0] ?>
 
     <header class="navbar bg-success">
         <div class="container-fluid">
@@ -29,7 +30,7 @@ include '../backEnd/pegaRequisicao.php';
             </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="#" class="btn btn-carousel text-white"><i class="fas fa-user fa-2x"></i></a>
+                        <a href="perfilFuncionario.php" class="btn btn-carousel text-white"><i class="fas fa-user fa-2x"></i></a>
                     </li>
                 </ul>
         </div>
@@ -51,7 +52,7 @@ include '../backEnd/pegaRequisicao.php';
                 </tr>
             </thead>
             <tbody class="mt-5">
-                <?php echo $dado ?>
+                <?php echo $estrutura[1] ?>
             </tbody>
         </table>
     </main>

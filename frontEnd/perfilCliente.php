@@ -1,6 +1,7 @@
-<?php 
+<?php
     include '../backEnd/pegaUsuario.php';
     include('../backEnd/function.php');
+    echo($_SESSION['idlogado']);
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +25,7 @@
             </div>
                 <ul class="nav">
                     <li class="nav-item p-2 mt-1">
-                        <a href="#" class="text-white text-decoration-none fs-5">Bem vindo(a): <?php echo getNome($_SESSION['idlogado']);?></a>
+                        <a href="#" class="text-white text-decoration-none fs-5">Bem vindo(a): <?php echo $usuario['nome'];?></a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-success text-white m-2" href="pedidoCliente.php">Minhas solicitações</a>

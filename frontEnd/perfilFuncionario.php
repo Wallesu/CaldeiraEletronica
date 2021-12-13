@@ -1,11 +1,15 @@
 <?php 
 include '../backEnd/pegaUsuario.php';
+include '../backEnd/pegaRequisicao.php';
+$estrutura = tabelaRequisicoesFuncionario();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/requisicao.css">
+    <link rel="stylesheet" type="text/css" href="dist/jQuery/datatables.min.css"/>
     <link rel="stylesheet" href="css/landing.CSS">
 	<link rel="stylesheet" href="css/funcionario.CSS">
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
@@ -16,6 +20,7 @@ include '../backEnd/pegaUsuario.php';
     <title>Perfil Funcionário</title>
 </head>
 <body>
+    <?php echo $estrutura[0] ?>
     <header class="navbar">
         <div class="container-fluid">
             <div>
@@ -30,6 +35,9 @@ include '../backEnd/pegaUsuario.php';
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-carousel text-white" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger text-white m-2" href="../backEnd/logout.php">Sair</a>
                     </li>
                 </ul>
         </div>
@@ -110,6 +118,26 @@ include '../backEnd/pegaUsuario.php';
                                         </div>
                                     </div>
                                 </div>
+                                <div class="reqContainer">
+                                    <div class="my-5">
+                                        <h3>Meus serviços</h3>
+                                    </div>
+                                    <table id="tabelaRequisicoes" class="display mt-5" style="width:100%">
+                                        <thead class="bg-success">
+                                            <tr>
+                                                <th>descricao</th>
+                                                <th>modelo</th>
+                                                <th>marca</th>
+                                                <th>data</th>
+                                                <th>status</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="mt-5">
+                                            <?php echo $estrutura[1] ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>    
                         </div>
                 </div>
@@ -119,5 +147,9 @@ include '../backEnd/pegaUsuario.php';
 
     
 </body>
+<script src="dist/jQuery/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="dist/jQuery/datatables.min.js"></script>
+<script src="dist/jQuery/dataTables.bootstrap5.min.css"></script>
 <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/tabelaDados.js"></script>
 </html>

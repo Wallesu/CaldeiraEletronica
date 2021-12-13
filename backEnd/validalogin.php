@@ -14,9 +14,7 @@ if((isset($_POST['nemail'])) && (isset($_POST['nsenha']))){
 
     
     if($id != ''){
-        $nome = getNome($id);
         $permissao = define_tipo($id);
-        var_dump($permissao);
 
         if($permissao == 1){
             header('location: ../frontEnd/perfilAdm.php');

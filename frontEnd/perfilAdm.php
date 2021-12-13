@@ -1,6 +1,7 @@
 <?php
-    session_start();
-    include('../backEnd/function.php')
+    include '../backEnd/pegaUsuario.php';
+    include('../backEnd/function.php');
+    echo($_SESSION['idlogado']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +24,7 @@
             </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="#" class="btn btn-carousel text-white">Bem vindo(a): <?php echo getNome($_SESSION['idlogado']);?></a>
+                        <a href="#" class="btn btn-carousel text-white">Bem vindo(a): <?php echo $usuario['nome']?></a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-carousel text-white" href="#">Serviços</a>
@@ -36,6 +37,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-carousel text-white" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger text-white m-2" href="index.php">Sair</a>
                     </li>
                 </ul>
         </div>

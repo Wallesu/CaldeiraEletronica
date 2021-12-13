@@ -37,37 +37,6 @@
     return $idUsuario;
 }
 
-function getNome($i){
-    $sql = "SELECT nome FROM usuarios "
-    ." WHERE id = '".$i."';";
-
-    include("conection.php");
-
-    $result = mysqli_query($conn,$sql);
-    mysqli_close($conn);
-
-
-    //Valida se retornou linha
-    if(mysqli_num_rows($result) > 0){
-
-        $arrayemail = array();
-
-        //Descarregar dados no array
-        while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            //Gravação no array
-            array_push($arrayemail,$linha);
-        }
-
-        //Validar dados 
-        foreach($arrayemail as $campo){  
-            $nome = $campo['nome'];                  
-            
-        }
-                
-    }
-    return $nome;
-}
-
 function define_tipo($ide){
     $sql = "SELECT tipo_usuario_id FROM usuarios "
     ." WHERE id = '".$ide."';";
