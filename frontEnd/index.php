@@ -46,7 +46,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="src/img1-carousel.png" class="d-block w-100" alt="..." style="height: 33rem;">
-            <div class="carousel-caption d-none d-md-block h-75 text-carousel">
+            <div class="carousel-caption h-75 text-carousel">
               <h1>Quebrou?</h1>
               <p>Eletrônica Caldeira é a solução.</p>
               <a href="#faça_seu_orçamento" class="btn btn-carousel text-white">Entre em contato</a>
@@ -54,9 +54,9 @@
           </div>
           <div class="carousel-item">
             <img src="src/img2-carousel.png" class="d-block w-100" alt="..." style="height: 33rem;">
-            <div class="carousel-caption d-none d-md-block h-75 text-carousel">
-              <h1>Metodologia exclusisa</h1>
-              <p>Trabalhamos com as melhores praticas do mercado.</p>
+            <div class="carousel-caption h-75 text-carousel">
+              <h1>Metodologia exclusiva</h1>
+              <p>Trabalhamos com as melhores práticas do mercado.</p>
               <a href="#faça_seu_orçamento" class="btn btn-carousel text-white">Entre em contato</a>
             </div>
           </div>
@@ -71,17 +71,15 @@
         </button>
       </div>
 
-      <div class="b-example-divider"></div>
-
       <section class="Assistencia">
         <div class="container my-4">
           <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center border shadow-lg">
             <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h3 class="display-6 fw-bold lh-1">Assistência técnica em TV`S, Computadores e celulares.</h3>
+                <h3 class="display-6 fw-bold lh-1">Assistência técnica em TV's, computadores e celulares</h3>
                 <p class="lead">A Eletrônica Caldeira é uma empresa com modernos laboratórios de eletrônica. Isso garante à nossos clientes, excelência nos serviços que prestamos.</p>
                 <p class="lead">nosso foco é proporcionar agilidade e qualidade em nossos serviços para todos os modelos e marcas.</p>
                 <div class="d-grid gap-2 d-md-flex mb-4 mb-lg-3">
-                  <button type="button" class="btn btn-outline-success btn-lg px-4" href="#faça_seu_orçamento">Faça seu orçamento</a>
+                  <a type="button" class="btn btn-outline-success btn-lg px-4" href="#faça_seu_orçamento">Solicitar orçamento</a>
                 </div>
               </div>
             <div class="col-md-5 col-lg-4 p-0">
@@ -92,7 +90,7 @@
       </section>
 
       <section>
-        <div class="container container-duvidas p-0 my-4">
+        <div class="container container-duvidas p-0 my-5">
           <div class="row">
             <div class="col-sm-5">
               <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -117,10 +115,10 @@
                 </button>
               </div>
             </div>
-            <div class="col-sm-6 text-duvidas text-white m-4">
-              <h2>Principar defeitos e principas dúvidas</h2>
-              <p>Diversos problemas podem acontecer com seu aparelho, sendo necessário encamanhá-lo para o conserto em uma assistência técnica.</p>
-              <p>Aqui na Eletrônica Caldeira somos especializados em resolver todos os tipos de questões relacionadas à seu aparelho eletronico.</p>
+            <div class="col-sm-6 text-duvidas text-white m-4" >
+              <h2>Principais defeitos e principais dúvidas</h2>
+              <p>Diversos problemas podem acontecer com seu aparelho, sendo necessário encaminha-lo para o conserto em uma assistência técnica.</p>
+              <p>Aqui na Eletrônica Caldeira somos especializados em resolver todos os tipos de questões relacionadas à seu aparelho elêtronico.</p>
               <p>Sejam falhas mais simples ou mais complexas, nossos técnicos são altamente capacitados a realizar a manutenção do seu aparelho, independente da marca ou modelo</p>
               <h5>Principas dúvidas:</h5>
               <ul>
@@ -178,19 +176,28 @@
                     <label for="state" class="form-label">Qual a marca?</label>
                     <select class="form-select" id="marca" name="nMarcaproduto" required>
                       <option value="0">Selecione</option>
-                      <?php echo listaMarcas();?>
+                      <option value="apple">Apple</option>
+                      <option value="Samsung">Samsung</option>
+                      <option value="LG">LG</option>
+                      <option value="Xiaomi">Xiaomi</option>
+                      <option value="Acer">Acer</option>
+                      <option value="Lenovo">Lenovo</option>
+                      <option value="Positivo">Positivo</option>
+                      <option value="Asus">Asus</option>
+                      <option value="Dell">Dell</option>
+                      <option value="desconhecido">nenhuma das opções acima</option>
                     </select>
                     <div class="invalid-feedback">
                       Selecione uma opção valida.
                     </div>
                   </div>
                 </div>
-      
+<!--       
                 <div class="row gy-3">
                   <div class="col-sm-10">
                       <label for="formFile" class="form-label ">Mande uma foto do produto</label>
                       <input class="form-control" type="file" id="foto" name="nFoto" value="">
-                  </div>
+                  </div> -->
       
                 <hr class="my-3">
       

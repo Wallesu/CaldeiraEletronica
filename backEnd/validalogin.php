@@ -13,7 +13,7 @@ if((isset($_POST['nemail'])) && (isset($_POST['nsenha']))){
     $id = validaAcesso($email,$senha);
 
     
-    if($id != ''){
+    if($id != 0){
         $permissao = define_tipo($id);
 
         if($permissao == 1){
@@ -24,10 +24,12 @@ if((isset($_POST['nemail'])) && (isset($_POST['nsenha']))){
             header('location: ../frontEnd/perfilCliente.php');
         }
     }
-    echo('passou aq');
+    else{
+        $erro = 'Email ou senha incorretos!';
+        header("Location: ../frontEnd/logaUsuario.php?erro=".$erro);
+    }
 }else{
-	$_SESSION['emailErro'] = "Usuário ou senha inválido";
-    header("Location: ../frontEnd/logaUsuario.php");
+	
 }
 
    

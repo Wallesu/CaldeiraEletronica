@@ -1,4 +1,6 @@
-
+<?php 
+error_reporting(E_ERROR | E_PARSE);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -27,13 +29,12 @@
                             <div class="mt-4 d-flex align-items-center justify-content-between">
                                 <button type="submit" id="botaoEnviar" class="btn btn-success botaoLogin">Logar</button>
                                 <div>
-                                    <span><a href="">Esqueceu a senha?</a></span>
-                                </div>
+                                <ul id="listaErros" class="text-danger mt-3 listaErros">
+                                    <li><?php echo($_GET['erro']); ?></li>
+                                </ul>
+                            </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <ul id="listaErros" class="text-danger mt-3 listaErros"></ul>
                     </div>
             </form>
         </div>

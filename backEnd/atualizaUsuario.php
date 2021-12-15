@@ -20,7 +20,7 @@ function atualizaUsuario($nome, $cpf, $telefone, $cep, $cidade, $rua, $numero){
         'cep = "'.$cep.'", cidade = "'.$cidade.'", rua = "'.$rua.'", numero = '.$numero.' WHERE id = '.$_SESSION['idlogado'].';';
 
     if(mysqli_query($conn, $query)){
-        header('location: ../frontEnd/perfilFuncionario.php');
+        header('location: ../frontEnd/perfilCliente.php');
     }
     echo('Ocorreu um erro!');
 }

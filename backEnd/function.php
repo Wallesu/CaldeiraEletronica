@@ -32,9 +32,9 @@
             $idUsuario = $campo['id'];                  
             $_SESSION['idlogado'] = $campo['id'];
         }
-                
+        return $idUsuario;       
     }
-    return $idUsuario;
+    return 0;
 }
 
 function define_tipo($ide){

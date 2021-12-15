@@ -2,6 +2,7 @@
 
 if($_GET["funcao"] == '1') responsabilizaRequisicao();
 if($_GET["funcao"] == '2') desresponsabilizaRequisicao();
+if($_GET["funcao"] == '3') concluiRequisicao();
 
 function responsabilizaRequisicao(){
     session_start();
@@ -23,6 +24,15 @@ function desresponsabilizaRequisicao(){
     include 'conection.php';
 
     $query = "UPDATE solicitacoes SET funcionario_id='', status='solicitado' WHERE id=".$idReq;
+    $resultado = mysqli_query($conn, $query);
+    header('location: ../../frontEnd/perfilFuncionario.php');
+}
+
+function concluiRequisicao(){
+    $idReq = $_GET["idReq"];
+    include 'conection.php';
+
+    $query = "UPDATE solicitacoes SET status='concluído' WHERE id=".$idReq;
     $resultado = mysqli_query($conn, $query);
     header('location: ../../frontEnd/perfilFuncionario.php');
 }

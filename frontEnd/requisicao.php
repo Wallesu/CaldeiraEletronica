@@ -9,6 +9,7 @@ $estrutura = tabelaRequisicoes();
 <meta charset="UTF-8">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/requisicao.css">
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,14 +24,14 @@ $estrutura = tabelaRequisicoes();
 <!-- Modal -->
     <?php echo $estrutura[0] ?>
 
-    <header class="navbar bg-success">
+    <header class="navbar">
         <div class="container-fluid">
             <div>
                 <h2 class="text-white">Eletrônica Caldeira</h2>
             </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="perfilFuncionario.php" class="btn btn-carousel text-white"><i class="fas fa-user fa-2x"></i></a>
+                        <a href="../backEnd/redirecionaUsuario.php" class="btn btn-carousel text-white"><i class="fas fa-user fa-2x"></i></a>
                     </li>
                 </ul>
         </div>
@@ -43,7 +44,7 @@ $estrutura = tabelaRequisicoes();
             <thead class="bg-success">
                 <tr>
                     <th></th>
-                    <th>descricao</th>
+                    <th>descrição</th>
                     <th>modelo</th>
                     <th>marca</th>
                     <th>data</th>
@@ -55,6 +56,9 @@ $estrutura = tabelaRequisicoes();
                 <?php echo $estrutura[1] ?>
             </tbody>
         </table>
+      
+                                
+                           
     </main>
     <script src="dist/jQuery/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="dist/jQuery/datatables.min.js"></script>

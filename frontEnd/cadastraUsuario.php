@@ -32,13 +32,13 @@
                             <label for="email" class="form-label">E-mail</label>
                             <input type="email" class="form-control campoForm" id="email" name="email" value="<?php echo $_SESSION['emailUsuario'];?>">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="number" class="form-control campoForm" max="999999999" id="telefone" name="telefone">
+                            <input type="text" class="form-control campoForm" maxlength="11" id="telefone" name="telefone">
                         </div>
                         <div class="col-md-6">
                             <label for="cpf" class="form-label">CPF</label>
-                            <input type="number" class="form-control campoForm" id="cpf" name="cpf">
+                            <input type="text" class="form-control campoForm" id="cpf" name="cpf" maxlength="14">
                         </div>
                         <div class="col-md-6">
                             <label for="senha" class="form-label">Crie uma senha</label>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-md-8">
                             <label for="complemento" class="form-label">Complemento</label>
-                            <input type="number" class="form-control campoForm" id="complemento">
+                            <input type="text" class="form-control campoForm" id="complemento">
                         </div>
                         <div class="col-12">
                             <button type="submit" id="botaoEnviar" class="btn btn-success" onclick="enviaDados()">Cadastrar-se</button>

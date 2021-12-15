@@ -31,10 +31,7 @@ $estrutura = tabelaRequisicoesFuncionario();
                         <a href="#" class="btn btn-carousel text-white">Bem vindo(a) <?php echo $usuario['nome']?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-carousel text-white" href="#">Meus trabalhos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-carousel text-white" href="#">Perfil</a>
+                        <a class="btn btn-success text-white m-2" href="requisicao.php">Requisições</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-outline-danger text-white m-2" href="../backEnd/logout.php">Sair</a>
@@ -125,7 +122,7 @@ $estrutura = tabelaRequisicoesFuncionario();
                                     <table id="tabelaRequisicoes" class="display mt-5" style="width:100%">
                                         <thead class="bg-success">
                                             <tr>
-                                                <th>descricao</th>
+                                                <th>descrição</th>
                                                 <th>modelo</th>
                                                 <th>marca</th>
                                                 <th>data</th>

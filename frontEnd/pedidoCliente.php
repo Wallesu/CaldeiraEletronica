@@ -1,13 +1,14 @@
 <?php
-    session_start();
-    include('../backEnd/function.php')
+	session_start();
+    include('../backEnd/function.php');
+    include('../backEnd/pegaUsuario.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/perfilUsuario.css">
+    <link rel="stylesheet" href="css/usuario.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +25,7 @@
             </div>
                 <ul class="nav">
                     <li class="nav-item p-2 mt-1">
-                        <a href="#" class="text-white text-decoration-none fs-5">Bem vindo(a): <?php echo getNome($_SESSION['idlogado']);?></a>
+                        <a href="#" class="text-white text-decoration-none fs-5">Bem vindo(a): <?php echo $usuario['nome'];?></a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-success active text-white m-2" href="#pedido">Minhas solicitações</a>
@@ -41,8 +42,6 @@
  
     <main class="fundo">
       <div class="container my-4">
-        <div class="row profile">
-          </div>
           <div class="col-md-9">
             <div class="profile-content">
               <div class="row">
@@ -50,11 +49,10 @@
                   <h4>Seu pedido:</h4>
                 </div>
               </div>
-              <form>
               <div class="col-md-6 col-lg-10">
                 <h4 class="col-sm-10 mb-3 p-2 bg-orçamento text-white" id="faça_seu_orçamento">Seu orçamento</h4>
-                <form action="../backEnd/salva_contato.php" method="POST" novalidate>
-                  <div class="row g-3">
+                <form action="../backEnd/cadastraRequisicao.php" method="POST" novalidate>
+                  <div class="row g-3 w-100">
         
                     <div class="col-sm-10">
                         <label for="exampleFormControlTextarea1" class="form-label">Qual o problema com o produto?</label>
@@ -79,27 +77,34 @@
                     <div class="col-md-5">
                       <label for="state" class="form-label">Qual a marca?</label>
                       <select class="form-select" id="state" name="nMarcaproduto" valeu="<?php echo $_SESSION['marcaProdUsuario'];?>" required>
-                        <option value="">Dell</option>
-                        <option>Samseung</option>
-                        <option>LG</option>
+                        <option value="0">Selecione</option>
+                        <option value="apple">Apple</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="LG">LG</option>
+                        <option value="Xiaomi">Xiaomi</option>
+                        <option value="Acer">Acer</option>
+                        <option value="Lenovo">Lenovo</option>
+                        <option value="Positivo">Positivo</option>
+                        <option value="Asus">Asus</option>
+                        <option value="Dell">Dell</option>
+                        <option value="desconhecido">nenhuma das opções acima</option>
                       </select>
                       <div class="invalid-feedback">
                         Selecione uma opção valida.
                       </div>
                     </div>
+                    <button class="col-md-5 col-lg-9 btn btn-outline-success btn-lg botao" type="submit">Fazer pedido</button>
                   </div>
         
-                  <div class="row gy-3">
+                  <!-- <div class="row gy-3">
                     <div class="col-sm-10">
                         <label for="formFile" class="form-label">Mande uma foto do produto</label>
                         <input class="form-control" type="file" id="formFile" name="nFoto" valeu="<?php echo $_SESSION['fotoProdUsuario'];?>">
-                    </div>
+                    </div> -->
         
-                  <button class="col-md-5 col-lg-9 btn btn-outline-success btn-lg" type="submit">Fazer pedido</button>
                 </form>
               </div>
             </div>
-              </form>
             </div>
             </div>
           </div>

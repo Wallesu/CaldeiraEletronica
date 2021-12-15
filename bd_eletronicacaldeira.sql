@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Dez-2021 às 01:21
+-- Tempo de geração: 15-Dez-2021 às 00:29
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.10
 
@@ -118,8 +118,9 @@ INSERT INTO `servicos` (`id`, `solicitacao_id`, `usuario_id`, `orcamento`, `rela
 CREATE TABLE `solicitacoes` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'id da solicitação do cliente',
   `usuario_id` int(10) UNSIGNED NOT NULL COMMENT 'Chave estrangeira da tabela usuários',
+  `funcionario_id` int(11) DEFAULT NULL,
   `descricao_cliente` text NOT NULL COMMENT 'descrição do produto',
-  `foto_produto` mediumblob NOT NULL COMMENT 'imagem do produto para verificação dos funcionários',
+  `foto_produto` mediumtext NOT NULL COMMENT 'imagem do produto para verificação dos funcionários',
   `status` varchar(10) NOT NULL COMMENT 'status do pedido "APROVADO", "REPROVADO".',
   `nome_produto` varchar(32) NOT NULL COMMENT 'nome do produto',
   `marca_produto` varchar(32) NOT NULL COMMENT 'marca do produto',
@@ -130,9 +131,12 @@ CREATE TABLE `solicitacoes` (
 -- Extraindo dados da tabela `solicitacoes`
 --
 
-INSERT INTO `solicitacoes` (`id`, `usuario_id`, `descricao_cliente`, `foto_produto`, `status`, `nome_produto`, `marca_produto`) VALUES
-(1, 3, 'O produto caiu e trincou a tela, além disso não está ligando mais.', 0x6434316438636439386630306232303465393830303939386563663834323765, 'solicitado', 'Iphone 5s', 'Apple'),
-(2, 4, 'Quebrei a tela do celular, poderia me ajudar com um orçamento para uma nova tela?', 0x6434316438636439386630306232303465393830303939386563663834323765, 'Solicitado', 'Samsung J9', 'Samsung');
+INSERT INTO `solicitacoes` (`id`, `usuario_id`, `funcionario_id`, `descricao_cliente`, `foto_produto`, `status`, `nome_produto`, `marca_produto`, `data`) VALUES
+(1, 3, 0, 'O produto caiu e trincou a tela, além disso não está ligando mais.', 'd41d8cd98f00b204e9800998ecf8427e', 'pendente', 'Iphone 5s', 'Apple', '0000-00-00 00:00:00'),
+(2, 4, 6, 'Quebrei a tela do celular, poderia me ajudar com um orçamento para uma nova tela?', 'd41d8cd98f00b204e9800998ecf8427e', 'concluído', 'Samsung J9', 'Samsung', '0000-00-00 00:00:00'),
+(18, 8, NULL, 'Meu notebook não está ligando. Uma tela azul persiste na tela quando clico no botão de ligar.', '', 'solicitado', 'Computador', 'Xiaomi', '2021-12-14 23:55:20'),
+(20, 15, NULL, 'Periféricos não são reconhecidos pelo computador.', '', 'solicitado', 'Computador', 'Acer', '2021-12-15 00:23:37'),
+(21, 15, NULL, 'Computador não mostra sinal de vida.', '', 'solicitado', 'Computador', 'Dell', '2021-12-15 00:24:05');
 
 -- --------------------------------------------------------
 
@@ -181,11 +185,17 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `tipo_usuario_id`, `nome`, `email`, `senha`, `cpf`, `telefone`, `cidade`, `rua`, `bairro`, `numero`, `complemento`, `cep`) VALUES
-(1, 1, 'Ângela Caldeira', 'ang.Caldeira@gmail.com', '123abc', '00100200345', '47993245323', 'Joinville', 'Rodrigo primeiro', 'São pedro', 12, '', '98734213'),
-(2, 2, 'Juliano Franco', 'juliano23@gmail.com', '123abc', '00200300456', '46977434254', 'Joinville', 'Julio crivo', 'América', 47, '', '54647891'),
-(3, 3, 'Rose Carvalho', 'rose.c@gmail.com', '123abc', '12345678900', '43989876544', 'Curitiba', 'Joana de Barros', 'Boqueirão', 32, '', '32421235'),
-(4, 3, 'José Vinicius', 'jose_vini@gmail.com', '123456', '12332145677', '47898964539', 'Joinville', 'Av. dos pilares', 'Iririú', 1232, '', '98769912'),
-(5, 2, 'Carla Rodrigues', 'carla.r12@gmail.com', '654321', '11125377864', '49988121669', 'Balneário Piçarras', 'Janaina moreira', 'União', 243, '', '32499908');
+(1, 1, 'Ângela Caldeira', 'ang.Caldeira@gmail.com', 'a906449d5769fa7361d7ecc6aa3f6d28', '00100200345', '47993245323', 'Joinville', 'Rodrigo primeiro', 'São pedro', 12, '', '98734213'),
+(2, 2, 'Juliano Franco', 'juliano23@gmail.com', 'a906449d5769fa7361d7ecc6aa3f6d28', '00200300456', '46977434254', 'Joinville', 'Julio crivo', 'América', 47, '', '54647891'),
+(3, 3, 'Rose Carvalho', 'rose.c@gmail.com', 'a906449d5769fa7361d7ecc6aa3f6d28', '12345678900', '43989876544', 'Curitiba', 'Joana de Barros', 'Boqueirão', 32, '', '32421235'),
+(4, 3, 'José Vinicius', 'jose_vini@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '12332145677', '47898964539', 'Joinville', 'Av. dos pilares', 'Iririú', 1232, '', '98769912'),
+(5, 1, 'Carla Rodrigues', 'carla.r12@gmail.com', 'c33367701511b4f6020ec61ded352059', '11125377864', '49988121669', 'Balneário Piçarras', 'Janaina moreira', 'União', 243, '', '32499908'),
+(6, 2, 'Wallyson Alexander de Souza', 'wallyson@hotmail.com', '202cb962ac59075b964b07152d234b70', '11111111111', '47996935700', 'Joinville', 'Rua Francisco Cristofoline', 'Vila Nvoa', 520, '', '1111111111'),
+(7, 1, 'adm', 'adm@hotmail.com', '202cb962ac59075b964b07152d234b70', '111111', '1111111', 'Joinville', 'Rua Francisco Cristofoline', 'Vila Nvoa', 520, '', '111111'),
+(8, 3, 'comum', 'comum@hotmail.com', '202cb962ac59075b964b07152d234b70', '111.179.269', '47996935700', 'Joinville', 'Rua Francisco Cristofoline', 'Vila Nvoa', 4200, '', '13123123'),
+(12, 2, 'funcionario', 'funcionario@hotmail.com', '202cb962ac59075b964b07152d234b70', '11111111111', '99999999999', 'Joinville', 'Rua Francisco Cristofoline', 'Vila Nova', 3213, '', '1010101010'),
+(14, 3, 'Joao Souza', 'joao@hotmail.com', '202cb962ac59075b964b07152d234b70', '11111111111', '47996935700', 'Joinville', 'Rua Francisco Cristofoline', 'Vila Nova', 520, '', '90909090'),
+(15, 3, 'Maria', 'maria@hotmail.com', '202cb962ac59075b964b07152d234b70', '11111111111', '47996935700', 'Joinville', 'Rua Francisco Cristofoline', 'Vila Nova', 4342, '', '423424');
 
 --
 -- Índices para tabelas despejadas
@@ -272,7 +282,7 @@ ALTER TABLE `servicos`
 -- AUTO_INCREMENT de tabela `solicitacoes`
 --
 ALTER TABLE `solicitacoes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id da solicitação do cliente', AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id da solicitação do cliente', AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `tipo_usuarios`
@@ -284,7 +294,7 @@ ALTER TABLE `tipo_usuarios`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id de cada usuário inserido automaticamente ', AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id de cada usuário inserido automaticamente ', AUTO_INCREMENT=16;
 
 --
 -- Restrições para despejos de tabelas

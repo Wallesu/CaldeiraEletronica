@@ -11,6 +11,8 @@
     $_SESSION['marcaProdUsuario'] = $_POST['nMarcaproduto'];
     $_SESSION['fotoProdUsuario'] = $_POST['nFoto'];
 
+    echo($_SESSION['problemaProdUsuario']);
+
     header("Location: ../frontEnd/cadastraUsuario.php");
 
 

@@ -50,3 +50,9 @@ body, html{
 .pointer:hover{
     transform: scale(1.03);
 }
+.containerSupremo{
+    height: 100%;
+}
+.botao{
+    width: 37rem !important;
+}
